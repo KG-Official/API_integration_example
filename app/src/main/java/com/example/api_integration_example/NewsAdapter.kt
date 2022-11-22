@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
+import com.example.api_integration_example.databinding.ItemListBinding
 
 class NewsAdapter(val context: Context,  val articles: List<Article>):Adapter<NewsAdapter.ArticleViewHolder>() {
 
@@ -17,7 +18,8 @@ class NewsAdapter(val context: Context,  val articles: List<Article>):Adapter<Ne
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_list,parent,false)
+        val view = ItemListBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+
 
 
         return ArticleViewHolder(view)
@@ -39,10 +41,10 @@ class NewsAdapter(val context: Context,  val articles: List<Article>):Adapter<Ne
     }
 
 
-    class ArticleViewHolder(itemView: View):ViewHolder(itemView){
-        var newsImg = itemView.findViewById<ImageView>(R.id.newsImage)
-        var newsTitle = itemView.findViewById<TextView>(R.id.newsTitle)
-        var newsDesription = itemView.findViewById<TextView>(R.id.newsDescription)
+    class ArticleViewHolder(binding : ItemListBinding):ViewHolder(binding.root){
+        var newsImg = binding.newsImage
+        var newsTitle = binding.newsTitle
+        var newsDesription = binding.newsDescription
     }
 
 }
