@@ -57,11 +57,13 @@ class MainActivity : AppCompatActivity() {
                     totalResult = news.totalResults
                     articles.addAll(news.articles)
                     adapter.notifyDataSetChanged()
+                    Log.d("MY News","total news "+ news.totalResults)
                 }
             }
             override fun onFailure(call: Call<News>, t: Throwable) {
                 Toast.makeText(this@MainActivity,"Error in Fetching News $t",Toast.LENGTH_SHORT).show()
             }
         })
+
     }
 }

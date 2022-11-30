@@ -10,7 +10,7 @@ import retrofit2.http.Query
 //https://newsapi.org/v2/everything?domains=wsj.com&apiKey=884d64a41d3b41b39894026907fc0163
 
 const val BASE_URL = "https://newsapi.org/"
-const val API_KEY = "884d64a41d3b41b39894026907fc0163"
+const val API_KEY = "ec37cd2f412d42ca9409d6b3beb2c73c"
 
 interface NewsApi_Interface {
 

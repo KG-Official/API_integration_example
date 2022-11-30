@@ -1,3 +1,12 @@
 package com.example.api_integration_example
 
-data class Article(var author:String, var title:String,var description:String,var url:String,var urlToImage:String)
+import com.google.gson.annotations.SerializedName
+
+data class Article(
+    var author: String,
+    @SerializedName("title")
+    var Artical_title: String,
+    var description: String,
+    var url: String,
+    var urlToImage: String
+)
